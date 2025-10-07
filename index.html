@@ -12,6 +12,7 @@
       font-family: 'Poppins', sans-serif;
       background: #f4f6f9;
       color: #333;
+      overflow-x: hidden;
     }
     header {
       background: #0b1c2c;
@@ -19,11 +20,51 @@
       padding: 2rem 1rem;
       text-align: center;
       font-family: 'Montserrat', sans-serif;
+      position: relative;
     }
     h1 {
       margin: 0;
       font-size: 2rem;
+      position: relative;
+      z-index: 2;
     }
+    header p {
+      z-index: 2;
+      position: relative;
+    }
+    .rocket {
+      font-size: 2.5rem;
+      position: relative;
+      z-index: 2;
+    }
+    .particles {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .particles span {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #ff6b00;
+      border-radius: 50%;
+      animation: fly 1.5s infinite ease-in-out;
+    }
+    .particles span:nth-child(1) { top: 10%; left: 20%; animation-delay: 0s; }
+    .particles span:nth-child(2) { top: 30%; left: 70%; animation-delay: 0.3s; }
+    .particles span:nth-child(3) { top: 60%; left: 40%; animation-delay: 0.6s; }
+    .particles span:nth-child(4) { top: 80%; left: 80%; animation-delay: 0.9s; }
+
+    @keyframes fly {
+      0% { transform: scale(1) translateY(0); opacity: 1; }
+      100% { transform: scale(0.5) translateY(20px); opacity: 0; }
+    }
+
     .container {
       max-width: 900px;
       margin: auto;
@@ -134,8 +175,12 @@
 <body>
 
 <header>
-  <h1>🚀 Capacitación para Setters - Negocios de Agus</h1>
-  <p>💼 Formate como emprendedor y explotá tu potencial</p>
+  <div class="rocket">🚀</div>
+  <div class="particles">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <h1>Capacitación para Setters - Negocios de Agus</h1>
+  <p>Formación BETA para atención al cliente.</p>
 </header>
 
 <div class="container">
@@ -146,8 +191,8 @@
 
   <!-- Clase 1 -->
   <div class="card visible" id="clase1">
-    <h2>🎓 Clase 1: Introducción</h2>
-    <iframe src="https://drive.google.com/file/d/1jyCah9gQEjKUx5T0sTSUTG_xi39JhnbF/preview" allow="autoplay"></iframe>
+    <h2>🎓 Clase 1: Método de atención al cliente</h2>
+    <iframe src="https://drive.google.com/file/d/1V7lnPMp0vyKf2-NS5c26q6Y2pHa8Wtr8/preview" allow="autoplay"></iframe>
     <div class="terms">
       <input type="checkbox" id="terms1" />
       <label for="terms1">Acepto los términos y condiciones</label>
@@ -157,31 +202,9 @@
 
   <!-- Clase 2 -->
   <div class="card" id="clase2">
-    <h2>🗣️ Clase 2: Comunicación efectiva</h2>
-    <iframe src="https://drive.google.com/file/d/ID_CLASE_2/preview" allow="autoplay"></iframe>
-    <div class="terms">
-      <input type="checkbox" id="terms2" />
-      <label for="terms2">Acepto los términos y condiciones</label>
-    </div>
-    <button class="next-btn" id="btn2" disabled onclick="showClase(3)">👉 Ir a Clase 3</button>
-  </div>
-
-  <!-- Clase 3 -->
-  <div class="card" id="clase3">
-    <h2>🛡️ Clase 3: Manejo de objeciones</h2>
-    <iframe src="https://drive.google.com/file/d/ID_CLASE_3/preview" allow="autoplay"></iframe>
-    <div class="terms">
-      <input type="checkbox" id="terms3" />
-      <label for="terms3">Acepto los términos y condiciones</label>
-    </div>
-    <button class="next-btn" id="btn3" disabled onclick="showClase(4)">👉 Ir a Clase 4</button>
-  </div>
-
-  <!-- Clase 4 -->
-  <div class="card" id="clase4">
-    <h2>💰 Clase 4: Cierre de ventas</h2>
-    <iframe src="https://drive.google.com/file/d/ID_CLASE_4/preview" allow="autoplay"></iframe>
-    <p>🎉 ¡Felicitaciones por completar la capacitación inicial!</p>
+    <h2>📈 Clase 2: Objetivo diario para las ventas</h2>
+    <iframe src="https://drive.google.com/file/d/1LRaVHgHXBRRBuOEC0U1kcGd3POShgDKc/preview" allow="autoplay"></iframe>
+    <p>🎉 ¡Felicitaciones por completar la formación BETA!</p>
   </div>
 
   <!-- Testimonios -->
@@ -199,26 +222,18 @@
 
 <script>
   let progreso = 0;
-
   document.getElementById('terms1').addEventListener('change', function() {
     document.getElementById('btn1').disabled = !this.checked;
   });
-  document.getElementById('terms2').addEventListener('change', function() {
-    document.getElementById('btn2').disabled = !this.checked;
-  });
-  document.getElementById('terms3').addEventListener('change', function() {
-    document.getElementById('btn3').disabled = !this.checked;
-  });
+
   function showClase(num) {
     const card = document.getElementById('clase' + num);
     card.classList.add('visible');
     card.scrollIntoView({ behavior: 'smooth' });
-    progreso += 25;
+    progreso += 50;
     document.getElementById('progress').style.width = progreso + '%';
   }
 </script>
 
 </body>
 </html>
-
-

@@ -3,115 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Capacitación Setters - Agus</title>
+  <title>🚀 Capacitación Setters - Agus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: #f4f6f9;
       color: #333;
     }
     header {
-      background: #1f2d3d;
+      background: #0b1c2c;
       color: white;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
+      font-family: 'Montserrat', sans-serif;
     }
     h1 {
       margin: 0;
       font-size: 2rem;
     }
     .container {
-      max-width: 800px;
-      margin: 2rem auto;
+      max-width: 900px;
+      margin: auto;
       padding: 1rem;
     }
     .card {
       background: white;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      border-radius: 8px;
+      border-radius: 12px;
       padding: 1rem;
       margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     .card h2 {
+      font-family: 'Montserrat', sans-serif;
       margin-top: 0;
+      font-size: 1.4rem;
     }
     iframe {
       width: 100%;
       height: 360px;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
     }
     .terms {
       margin-top: 1rem;
+      font-size: 0.95rem;
     }
     .next-btn {
       margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background: #007bff;
+      padding: 0.7rem 1.4rem;
+      background: #ff6b00;
       color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
     }
     .next-btn:disabled {
       background: #ccc;
       cursor: not-allowed;
+    }
+    .progress-bar {
+      height: 20px;
+      background: #dfe3e6;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #00c48c;
+      transition: width 0.5s ease;
+    }
+    .testimonios {
+      background: #e9edf2;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 3rem;
+    }
+    .testimonios h3 {
+      font-family: 'Montserrat', sans-serif;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    .testimonios p {
+      font-style: italic;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      font-size: 30px;
+      line-height: 60px;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      iframe {
+        height: 220px;
+      }
+      .next-btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Capacitación para Setters - Negocios de Agus</h1>
-  <p>Comenzá tu camino como setter profesional</p>
+  <h1>🚀 Capacitación para Setters - Negocios de Agus</h1>
+  <p>💼 Formate como emprendedor y explotá tu potencial</p>
 </header>
 
 <div class="container">
 
+  <div class="progress-bar">
+    <div class="progress-fill" id="progress"></div>
+  </div>
+
   <!-- Clase 1 -->
-  <div class="card" id="clase1">
-    <h2>Clase 1: Introducción</h2>
+  <div class="card visible" id="clase1">
+    <h2>🎓 Clase 1: Introducción</h2>
     <iframe src="https://drive.google.com/file/d/1jyCah9gQEjKUx5T0sTSUTG_xi39JhnbF/preview" allow="autoplay"></iframe>
     <div class="terms">
       <input type="checkbox" id="terms1" />
       <label for="terms1">Acepto los términos y condiciones</label>
     </div>
-    <button class="next-btn" id="btn1" disabled onclick="showClase(2)">Ir a Clase 2</button>
+    <button class="next-btn" id="btn1" disabled onclick="showClase(2)">👉 Ir a Clase 2</button>
   </div>
 
   <!-- Clase 2 -->
-  <div class="card" id="clase2" style="display:none;">
-    <h2>Clase 2: Comunicación efectiva</h2>
+  <div class="card" id="clase2">
+    <h2>🗣️ Clase 2: Comunicación efectiva</h2>
     <iframe src="https://drive.google.com/file/d/ID_CLASE_2/preview" allow="autoplay"></iframe>
     <div class="terms">
       <input type="checkbox" id="terms2" />
       <label for="terms2">Acepto los términos y condiciones</label>
     </div>
-    <button class="next-btn" id="btn2" disabled onclick="showClase(3)">Ir a Clase 3</button>
+    <button class="next-btn" id="btn2" disabled onclick="showClase(3)">👉 Ir a Clase 3</button>
   </div>
 
   <!-- Clase 3 -->
-  <div class="card" id="clase3" style="display:none;">
-    <h2>Clase 3: Manejo de objeciones</h2>
+  <div class="card" id="clase3">
+    <h2>🛡️ Clase 3: Manejo de objeciones</h2>
     <iframe src="https://drive.google.com/file/d/ID_CLASE_3/preview" allow="autoplay"></iframe>
     <div class="terms">
       <input type="checkbox" id="terms3" />
       <label for="terms3">Acepto los términos y condiciones</label>
     </div>
-    <button class="next-btn" id="btn3" disabled onclick="showClase(4)">Ir a Clase 4</button>
+    <button class="next-btn" id="btn3" disabled onclick="showClase(4)">👉 Ir a Clase 4</button>
   </div>
 
   <!-- Clase 4 -->
-  <div class="card" id="clase4" style="display:none;">
-    <h2>Clase 4: Cierre de ventas</h2>
+  <div class="card" id="clase4">
+    <h2>💰 Clase 4: Cierre de ventas</h2>
     <iframe src="https://drive.google.com/file/d/ID_CLASE_4/preview" allow="autoplay"></iframe>
-    <p>¡Felicitaciones por completar la capacitación inicial!</p>
+    <p>🎉 ¡Felicitaciones por completar la capacitación inicial!</p>
+  </div>
+
+  <!-- Testimonios -->
+  <div class="testimonios">
+    <h3>🗣️ Testimonios de Setters Reales</h3>
+    <p>“Gracias a Agus aprendí a cerrar ventas con confianza. Hoy tengo ingresos que nunca imaginé.” – Sofía M.</p>
+    <p>“La capacitación fue clara, directa y poderosa. Me siento parte de algo grande.” – Tomás R.</p>
+    <p>“Nunca pensé que trabajar como setter fuera tan dinámico. ¡Estoy motivado todos los días!” – Valentina G.</p>
   </div>
 
 </div>
 
+<!-- WhatsApp Button -->
+<a href="https://wa.me/542645615296" class="whatsapp-float" target="_blank" title="Soporte por WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
 <script>
+  let progreso = 0;
+
   document.getElementById('terms1').addEventListener('change', function() {
     document.getElementById('btn1').disabled = !this.checked;
   });
@@ -121,13 +209,16 @@
   document.getElementById('terms3').addEventListener('change', function() {
     document.getElementById('btn3').disabled = !this.checked;
   });
-
   function showClase(num) {
-    document.getElementById('clase' + num).style.display = 'block';
-    window.scrollTo({ top: document.getElementById('clase' + num).offsetTop, behavior: 'smooth' });
+    const card = document.getElementById('clase' + num);
+    card.classList.add('visible');
+    card.scrollIntoView({ behavior: 'smooth' });
+    progreso += 25;
+    document.getElementById('progress').style.width = progreso + '%';
   }
 </script>
 
 </body>
 </html>
+
 

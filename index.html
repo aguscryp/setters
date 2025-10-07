@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Capacitación Setters - Agus</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+    header {
+      background: #1f2d3d;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    .card {
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+    iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+      border-radius: 6px;
+    }
+    .terms {
+      margin-top: 1rem;
+    }
+    .next-btn {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .next-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Capacitación para Setters - Negocios de Agus</h1>
+  <p>Comenzá tu camino como setter profesional</p>
+</header>
+
+<div class="container">
+
+  <!-- Clase 1 -->
+  <div class="card" id="clase1">
+    <h2>Clase 1: Introducción</h2>
+    <iframe src="https://drive.google.com/file/d/1jyCah9gQEjKUx5T0sTSUTG_xi39JhnbF/preview" allow="autoplay"></iframe>
+    <div class="terms">
+      <input type="checkbox" id="terms1" />
+      <label for="terms1">Acepto los términos y condiciones</label>
+    </div>
+    <button class="next-btn" id="btn1" disabled onclick="showClase(2)">Ir a Clase 2</button>
+  </div>
+
+  <!-- Clase 2 -->
+  <div class="card" id="clase2" style="display:none;">
+    <h2>Clase 2: Comunicación efectiva</h2>
+    <iframe src="https://drive.google.com/file/d/ID_CLASE_2/preview" allow="autoplay"></iframe>
+    <div class="terms">
+      <input type="checkbox" id="terms2" />
+      <label for="terms2">Acepto los términos y condiciones</label>
+    </div>
+    <button class="next-btn" id="btn2" disabled onclick="showClase(3)">Ir a Clase 3</button>
+  </div>
+
+  <!-- Clase 3 -->
+  <div class="card" id="clase3" style="display:none;">
+    <h2>Clase 3: Manejo de objeciones</h2>
+    <iframe src="https://drive.google.com/file/d/ID_CLASE_3/preview" allow="autoplay"></iframe>
+    <div class="terms">
+      <input type="checkbox" id="terms3" />
+      <label for="terms3">Acepto los términos y condiciones</label>
+    </div>
+    <button class="next-btn" id="btn3" disabled onclick="showClase(4)">Ir a Clase 4</button>
+  </div>
+
+  <!-- Clase 4 -->
+  <div class="card" id="clase4" style="display:none;">
+    <h2>Clase 4: Cierre de ventas</h2>
+    <iframe src="https://drive.google.com/file/d/ID_CLASE_4/preview" allow="autoplay"></iframe>
+    <p>¡Felicitaciones por completar la capacitación inicial!</p>
+  </div>
+
+</div>
+
+<script>
+  document.getElementById('terms1').addEventListener('change', function() {
+    document.getElementById('btn1').disabled = !this.checked;
+  });
+  document.getElementById('terms2').addEventListener('change', function() {
+    document.getElementById('btn2').disabled = !this.checked;
+  });
+  document.getElementById('terms3').addEventListener('change', function() {
+    document.getElementById('btn3').disabled = !this.checked;
+  });
+
+  function showClase(num) {
+    document.getElementById('clase' + num).style.display = 'block';
+    window.scrollTo({ top: document.getElementById('clase' + num).offsetTop, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
 
